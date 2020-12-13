@@ -1,9 +1,14 @@
 import java.util.ArrayList;
 
 public class NoNullArrayList<T> extends ArrayList<T> {
-    
-    public void add(){
-        throw new IllegalArgumentException();  
+    ArrayList<T> data;
+
+    public NoNullArrayList(){
+        data = new ArrayList<T>();
+    }
+
+    public NoNullArrayList(int a){
+        data = new ArrayList<T>(a);
     }
 
     public boolean add(T a) {
@@ -11,7 +16,7 @@ public class NoNullArrayList<T> extends ArrayList<T> {
             throw new IllegalArgumentException(); 
         }
         else{
-            return super.add(a);
+            return data.add(a);
         }
     }
 
@@ -20,7 +25,7 @@ public class NoNullArrayList<T> extends ArrayList<T> {
             throw new IllegalArgumentException();
         }
         else{
-            super.add(i,a);
+            data.add(i,a);
         }
     }
 
@@ -29,7 +34,7 @@ public class NoNullArrayList<T> extends ArrayList<T> {
             throw new IllegalArgumentException();
         }
         else{
-            return super.set(i,a);
+            return data.set(i,a);
         }
     }
 
