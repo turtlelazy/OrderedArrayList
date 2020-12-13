@@ -1,4 +1,12 @@
 public class OrderedArrayList<T extends Comparable<T>> extends NoNullArrayList<T> {
+    public OrderedArrayList(){
+        super();
+    }
+
+    public OrderedArrayList(int a){
+        super(a);
+    }
+
     public boolean add(T a){
         for(int i = 0; i < size();i++){
             if(a.compareTo(get(i))<0){
